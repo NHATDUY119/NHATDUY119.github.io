@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Profile Cá Nhân | Sinh viên CNTT</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      /* --- CUSTOM CSS --- */
+      :root {
+        --primary-color: #2563eb; /* Xanh dương chuyên nghiệp */
+        --secondary-color: #1e293b; /* Xám đậm */
+        --bg-light: #f8fafc;
+      }
+
+      body {
+        font-family: "Inter", sans-serif;
+        color: var(--secondary-color);
+        line-height: 1.6;
+      }
+
+      /* Navigation */
+      .navbar {
+        box-shadow: 0 2px 15px rgba(0, 0, 0, 0.05);
+        padding: 15px 0;
+      }
+      .nav-link {
+        font-weight: 600;
+        color: var(--secondary-color);
+        margin-left: 15px;
+      }
+      .nav-link:hover {
+        color: var(--primary-color);
+      }
+
+      /* Hero Section */
+      .hero-section {
+        padding: 100px 0;
+        background: linear-gradient(135deg, #eff6ff 0%, #ffffff 100%);
+      }
+      .profile-img {
+        width: 250px;
+        height: 250px;
+        object-fit: cover;
+        border-radius: 50%;
+        border: 5px solid white;
+        box-shadow: 0 10px 30px rgba(37, 99, 235, 0.2);
+      }
+      .hero-subtitle {
+        color: var(--primary-color);
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        font-size: 0.9rem;
+      }
+
+      /* Cards & Projects */
+      .section-title {
+        position: relative;
+        margin-bottom: 3rem;
+        font-weight: 700;
+      }
+      .section-title::after {
+        content: "";
+        display: block;
+        width: 50px;
+        height: 3px;
+        background: var(--primary-color);
+        margin: 10px auto 0;
+      }
+
+      .skill-badge {
+        background-color: #e0e7ff;
+        color: var(--primary-color);
+        padding: 8px 15px;
+        border-radius: 50px;
+        font-weight: 600;
+        font-size: 0.9rem;
+        margin: 5px;
+        display: inline-block;
+      }
+
+      .project-card {
+        border: none;
+        transition: all 0.3s ease;
+        border-radius: 12px;
+        overflow: hidden;
+        background: white;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.02);
+        height: 100%;
+      }
+      .project-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+      }
+      .card-img-top {
+        height: 200px;
+        object-fit: cover;
+        background-color: #ddd; /* Placeholder color */
+      }
+
+      /* Footer */
+      footer {
+        background: var(--secondary-color);
+        color: white;
+        padding: 40px 0;
+      }
+      .social-icon {
+        width: 40px;
+        height: 40px;
+        background: white; /* Đổi nền thành màu trắng */
+        color: var(--primary-color); /* Đổi icon thành màu xanh chủ đạo */
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+        text-decoration: none;
+        margin: 0 5px;
+        transition: 0.3s;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Thêm đổ bóng cho nổi lên */
+        border: 1px solid #e2e8f0; /* Viền mỏng */
+      }
+
+      .social-icon:hover {
+        background: var(--primary-color);
+        color: white;
+        transform: translateY(-3px); /* Hiệu ứng bay lên nhẹ khi di chuột */
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top">
+      <div class="container">
+        <a class="navbar-brand fw-bold" href="#"
+          >NHATDUY<span class="text-primary">DEV</span></a
+        >
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div
+          class="collapse navbar-collapse justify-content-end"
+          id="navbarNav"
+        >
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link" href="#about">Giới thiệu</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#skills">Kỹ năng</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#projects">Dự án</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#contact">Liên hệ</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <section id="about" class="hero-section text-center text-lg-start">
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-lg-6 order-lg-2 text-center mb-5 mb-lg-0">
+            <img src="img/avt.jpg" alt="Avatar" class="profile-img" />
+          </div>
+          <div class="col-lg-6 order-lg-1">
+            <p class="hero-subtitle">Sinh viên CNTT năm 3</p>
+            <h1 class="display-4 fw-bold mb-3">
+              Xin chào, tôi là <br /><span class="text-primary"
+                >Trần Nhật Duy</span
+              >
+            </h1>
+            <p class="lead text-muted mb-4">
+              Tôi đam mê xây dựng các ứng dụng web hiệu quả và giải quyết vấn đề
+              thông qua công nghệ. Hiện đang tập trung phát triển kỹ năng
+              Full-stack với Laravel và .NET.
+            </p>
+            <div
+              class="d-flex gap-3 justify-content-center justify-content-lg-start"
+            >
+              <a
+                href="#projects"
+                class="btn btn-primary btn-lg px-4 rounded-pill"
+                >Xem Dự Án</a
+              >
+              <a href="#" class="btn btn-outline-dark btn-lg px-4 rounded-pill"
+                ><i class="fas fa-download me-2"></i>Tải CV</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="skills" class="py-5 bg-light">
+      <div class="container">
+        <h2 class="text-center section-title">Kỹ Năng Chuyên Môn</h2>
+        <div class="row g-4">
+          <div class="col-md-4">
+            <div class="bg-white p-4 rounded-4 h-100 shadow-sm">
+              <div class="text-primary mb-3">
+                <i class="fas fa-server fa-2x"></i>
+              </div>
+              <h4 class="fw-bold">Backend Development</h4>
+              <p class="text-muted small">Xây dựng logic hệ thống vững chắc.</p>
+              <hr />
+              <div>
+                <span class="skill-badge">C# / .NET</span>
+                <span class="skill-badge">PHP (Laravel)</span>
+                <span class="skill-badge">MySQL / SQL Server</span>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="bg-white p-4 rounded-4 h-100 shadow-sm">
+              <div class="text-primary mb-3">
+                <i class="fas fa-chart-line fa-2x"></i>
+              </div>
+              <h4 class="fw-bold">Data & Scripting</h4>
+              <p class="text-muted small">Xử lý dữ liệu và tự động hóa.</p>
+              <hr />
+              <div>
+                <span class="skill-badge">Python (Pandas)</span>
+                <span class="skill-badge">Linux / Bash</span>
+                <span class="skill-badge">Git / GitHub</span>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="bg-white p-4 rounded-4 h-100 shadow-sm">
+              <div class="text-primary mb-3">
+                <i class="fas fa-laptop-code fa-2x"></i>
+              </div>
+              <h4 class="fw-bold">Frontend Basic</h4>
+              <p class="text-muted small">
+                Tạo giao diện người dùng thân thiện.
+              </p>
+              <hr />
+              <div>
+                <span class="skill-badge">HTML5 / CSS3</span>
+                <span class="skill-badge">Bootstrap 5</span>
+                <span class="skill-badge">JavaScript</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="projects" class="py-5">
+      <div class="container">
+        <h2 class="text-center section-title">Dự Án Tiêu Biểu</h2>
+        <div class="row g-4">
+          <div class="col-md-6">
+            <div class="card project-card">
+              <div
+                class="card-img-top d-flex align-items-center justify-content-center bg-light text-secondary"
+              >
+                <i class="fas fa-wallet fa-3x"></i>
+              </div>
+              <div class="card-body">
+                <h5 class="card-title fw-bold">
+                  Website Quản Lý Thu Chi Cá Nhân
+                </h5>
+                <p class="card-text text-muted">
+                  Hệ thống giúp người dùng theo dõi dòng tiền, lập ngân sách và
+                  xem báo cáo thống kê trực quan.
+                </p>
+                <div class="mb-3">
+                  <span class="badge bg-primary">Laravel</span>
+                  <span class="badge bg-secondary">MySQL</span>
+                  <span class="badge bg-dark">ChartJS</span>
+                </div>
+                <a href="#" class="btn btn-outline-primary btn-sm"
+                  >Xem Demo <i class="fas fa-arrow-right ms-1"></i
+                ></a>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-6">
+            <div class="card project-card">
+              <div
+                class="card-img-top d-flex align-items-center justify-content-center bg-light text-secondary"
+              >
+                <i class="fas fa-database fa-3x"></i>
+              </div>
+              <div class="card-body">
+                <h5 class="card-title fw-bold">Phân Tích Dữ Liệu Bán Hàng</h5>
+                <p class="card-text text-muted">
+                  Sử dụng Python để làm sạch dữ liệu thô và trực quan hóa xu
+                  hướng kinh doanh.
+                </p>
+                <div class="mb-3">
+                  <span class="badge bg-warning text-dark">Python</span>
+                  <span class="badge bg-info text-dark">Pandas</span>
+                  <span class="badge bg-success">Seaborn</span>
+                </div>
+                <a href="#" class="btn btn-outline-primary btn-sm"
+                  >Xem Code <i class="fab fa-github ms-1"></i
+                ></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="py-5 bg-light">
+      <div class="container text-center">
+        <h2 class="section-title">Liên Hệ</h2>
+        <p class="lead mb-4">
+          Tôi luôn sẵn sàng cho các cơ hội thực tập và cộng tác.
+        </p>
+        <a
+          href="mailto:emailcuaban@example.com"
+          class="btn btn-primary btn-lg rounded-pill px-5 mb-4"
+        >
+          <i class="fas fa-envelope me-2"></i>Gửi Email Cho Tôi
+        </a>
+        <div class="mt-4">
+          <p class="fw-bold">Kết nối với tôi trên:</p>
+          <a href="#" class="social-icon"><i class="fab fa-github"></i></a>
+          <a href="#" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
+          <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+        </div>
+      </div>
+    </section>
+
+    <footer class="text-center">
+      <div class="container">
+        <p class="mb-0 small">
+          &copy; 2025 Trần Nhật Duy. Designed with Bootstrap 5.
+        </p>
+      </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>
